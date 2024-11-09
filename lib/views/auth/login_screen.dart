@@ -43,12 +43,8 @@ class LoginScreen extends ConsumerWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        "Sign up",
+                        "Login",
                         style: Theme.of(context).textTheme.headlineLarge,
-                      ),
-                      3.sH,
-                      const OutfitTextfield(
-                        label: "Name",
                       ),
                       3.sH,
                       const OutfitTextfield(
@@ -63,7 +59,7 @@ class LoginScreen extends ConsumerWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            "Already have an account?",
+                            "Forgot your password?",
                             style: Theme.of(context).textTheme.bodyMedium,
                           ),
                           Gap(2.h),
@@ -81,13 +77,13 @@ class LoginScreen extends ConsumerWidget {
                         onTap: () {},
                         child: appButton(
                           context,
-                          title: "SIGN UP",
+                          title: "LOGIN",
                         ),
                       ),
                       Gap(10.h),
                       Center(
                         child: Text(
-                          "Or sign up with social account",
+                          "Or login with social account",
                           style: Theme.of(context).textTheme.bodyLarge,
                           textAlign: TextAlign.center,
                         ),
