@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:outfitorbit/core/constants/app_wrapper_screen.dart';
+import 'package:outfitorbit/views/auth/forget_password_screen.dart';
 import 'package:outfitorbit/views/auth/login_screen.dart';
 import 'package:outfitorbit/views/auth/register_screen.dart';
 import 'package:outfitorbit/views/favorites/favorites_screen.dart';
@@ -60,7 +61,7 @@ class CustomNavigationHelper {
     // Router initialization happens here.
     router = GoRouter(
       navigatorKey: parentNavigatorKey,
-      initialLocation: AppRoutes.login,
+      initialLocation: AppRoutes.forgotPassword,
       routes: routes,
     );
   }
@@ -79,6 +80,10 @@ class CustomNavigationHelper {
     GoRoute(
       path: AppRoutes.register,
       builder: (context, state) => const RegisterScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.forgotPassword,
+      builder: (context, state) => const ForgetPasswordScreen(),
     ),
     StatefulShellRoute.indexedStack(
       parentNavigatorKey: parentNavigatorKey,
