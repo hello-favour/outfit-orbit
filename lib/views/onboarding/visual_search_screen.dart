@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class RegisterScreen extends ConsumerWidget {
-  const RegisterScreen({super.key});
+class VisualSearchScreen extends ConsumerWidget {
+  const VisualSearchScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

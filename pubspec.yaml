@@ -85,10 +85,10 @@ flutter:
   fonts:
     - family: Metropolis
       fonts:
-        - asset: fonts/Metropolis-Regular.ttf
-        - asset: fonts/Metropolis-Medium.ttf
-        - asset: fonts/Metropolis-Bold.ttf
-        - asset: fonts/Metropolis-SemiBold.ttf
+        - asset: assets/fonts/Metropolis-Regular.ttf
+        - asset: assets/fonts/Metropolis-Medium.ttf
+        - asset: assets/fonts/Metropolis-Bold.ttf
+        - asset: assets/fonts/Metropolis-SemiBold.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
