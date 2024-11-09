@@ -1,4 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
+
+extension SizedBoxExt on num {
+  Widget get sH => SizedBox(
+        height: toDouble().h,
+      );
+  Widget get sW => SizedBox(
+        width: toDouble().w,
+      );
+}
 
 extension EmailValidator on String {
   bool isValidEmail() {

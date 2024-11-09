@@ -30,6 +30,9 @@ class $AssetsFontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/arrow.svg
+  String get arrow => 'assets/icons/arrow.svg';
+
   /// File path: assets/icons/bag.svg
   String get bag => 'assets/icons/bag.svg';
 
@@ -45,15 +48,31 @@ class $AssetsIconsGen {
   /// File path: assets/icons/home.svg
   String get home => 'assets/icons/home.svg';
 
+  /// File path: assets/icons/left.svg
+  String get left => 'assets/icons/left.svg';
+
   /// File path: assets/icons/profile.svg
   String get profile => 'assets/icons/profile.svg';
+
+  /// File path: assets/icons/share.svg
+  String get share => 'assets/icons/share.svg';
 
   /// File path: assets/icons/shop.svg
   String get shop => 'assets/icons/shop.svg';
 
   /// List of all assets
-  List<String> get values =>
-      [bag, facebook, favorite, google, home, profile, shop];
+  List<String> get values => [
+        arrow,
+        bag,
+        facebook,
+        favorite,
+        google,
+        home,
+        left,
+        profile,
+        share,
+        shop
+      ];
 }
 
 class Assets {
