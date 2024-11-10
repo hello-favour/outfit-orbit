@@ -6,6 +6,7 @@ import 'package:outfitorbit/views/auth/login_screen.dart';
 import 'package:outfitorbit/views/auth/register_screen.dart';
 import 'package:outfitorbit/views/favorites/favorites_screen.dart';
 import 'package:outfitorbit/views/home/home_screen.dart';
+import 'package:outfitorbit/views/onboarding/take_photo_screen.dart';
 import 'package:outfitorbit/views/onboarding/visual_search_screen.dart';
 import 'package:outfitorbit/views/profile/profile_screen.dart';
 import 'package:outfitorbit/views/shop/shop_screen.dart';
@@ -21,7 +22,8 @@ Page getPage({
 }
 
 abstract class AppRoutes {
-  static String get onboarding => '/splash';
+  static String get onboarding => '/visual';
+  static String get takePhoto => '/takePhoto';
   static String get login => '/login';
   static String get register => '/signup';
   static String get forgotPassword => '/forgotPassword';
@@ -61,7 +63,7 @@ class CustomNavigationHelper {
     // Router initialization happens here.
     router = GoRouter(
       navigatorKey: parentNavigatorKey,
-      initialLocation: AppRoutes.forgotPassword,
+      initialLocation: AppRoutes.takePhoto,
       routes: routes,
     );
   }
@@ -72,6 +74,10 @@ class CustomNavigationHelper {
     GoRoute(
       path: AppRoutes.onboarding,
       builder: (context, state) => const VisualSearchScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.takePhoto,
+      builder: (context, state) => const TakePhotoScreen(),
     ),
     GoRoute(
       path: AppRoutes.login,

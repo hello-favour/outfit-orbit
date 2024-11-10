@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:outfitorbit/core/constants/app_colors.dart';
-import 'package:outfitorbit/gen/assets.gen.dart';
 import 'package:sizer/sizer.dart';
 
 Container socialButton({required icon}) {
