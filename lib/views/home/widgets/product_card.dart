@@ -56,7 +56,6 @@ class ProductCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // Favorite Icon
                   Positioned(
                     bottom: 8,
                     right: 8,
