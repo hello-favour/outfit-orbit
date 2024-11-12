@@ -4,6 +4,7 @@ import 'package:outfitorbit/core/constants/app_wrapper_screen.dart';
 import 'package:outfitorbit/views/auth/forget_password_screen.dart';
 import 'package:outfitorbit/views/auth/login_screen.dart';
 import 'package:outfitorbit/views/auth/register_screen.dart';
+import 'package:outfitorbit/views/bag/bag_screen.dart';
 import 'package:outfitorbit/views/favorites/favorites_screen.dart';
 import 'package:outfitorbit/views/home/home_screen.dart';
 import 'package:outfitorbit/views/onboarding/search_result_screen.dart';
@@ -42,15 +43,15 @@ final GlobalKey<NavigatorState> parentNavigatorKey =
 final GlobalKey<NavigatorState> homeTabNavigatorKey =
     GlobalKey<NavigatorState>();
 
+final GlobalKey<NavigatorState> shopNavigatorKey = GlobalKey<NavigatorState>();
+
+final GlobalKey<NavigatorState> bagNavigatorKey = GlobalKey<NavigatorState>();
+
 final GlobalKey<NavigatorState> favoriteTabNavigationKey =
     GlobalKey<NavigatorState>();
 
 final GlobalKey<NavigatorState> profileNavigatorKey =
     GlobalKey<NavigatorState>();
-
-final GlobalKey<NavigatorState> bagNavigatorKey = GlobalKey<NavigatorState>();
-
-final GlobalKey<NavigatorState> shopNavigatorKey = GlobalKey<NavigatorState>();
 
 class CustomNavigationHelper {
   static final CustomNavigationHelper _instance =
@@ -133,6 +134,20 @@ class CustomNavigationHelper {
               pageBuilder: (context, GoRouterState state) {
                 return getPage(
                   child: const ShopScreen(),
+                  state: state,
+                );
+              },
+            ),
+          ],
+        ),
+        StatefulShellBranch(
+          navigatorKey: bagNavigatorKey,
+          routes: [
+            GoRoute(
+              path: AppRoutes.bag,
+              pageBuilder: (context, GoRouterState state) {
+                return getPage(
+                  child: const BagScreen(),
                   state: state,
                 );
               },

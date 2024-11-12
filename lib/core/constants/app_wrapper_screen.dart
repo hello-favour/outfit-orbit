@@ -22,6 +22,7 @@ class _AppWrapperScreenState extends State<AppWrapperScreen> {
     return Scaffold(
       body: SafeArea(child: widget.child),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: AppColors.whiteColor,
         unselectedItemColor: AppColors.hintText,
         fixedColor: AppColors.primaryColor,
         type: BottomNavigationBarType.fixed,
@@ -64,7 +65,7 @@ class _AppWrapperScreenState extends State<AppWrapperScreen> {
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               Assets.icons.favorite,
-              color: widget.child.currentIndex == 2
+              color: widget.child.currentIndex == 3
                   ? AppColors.primaryColor
                   : AppColors.hintText,
             ),
@@ -73,7 +74,7 @@ class _AppWrapperScreenState extends State<AppWrapperScreen> {
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
               Assets.icons.profile,
-              color: widget.child.currentIndex == 2
+              color: widget.child.currentIndex == 4
                   ? AppColors.primaryColor
                   : AppColors.hintText,
             ),
