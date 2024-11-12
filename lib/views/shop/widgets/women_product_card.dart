@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:outfitorbit/core/constants/app_colors.dart';
 import 'package:sizer/sizer.dart';
 
-class WomenProductCard extends StatelessWidget {
+class ProductCard extends StatelessWidget {
   final String title;
   final String imgUrl;
   final VoidCallback onTap;
-  const WomenProductCard({
+  const ProductCard({
     super.key,
     required this.title,
     required this.imgUrl,
