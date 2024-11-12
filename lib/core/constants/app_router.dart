@@ -11,6 +11,7 @@ import 'package:outfitorbit/views/onboarding/search_result_screen.dart';
 import 'package:outfitorbit/views/onboarding/take_photo_screen.dart';
 import 'package:outfitorbit/views/onboarding/visual_search_screen.dart';
 import 'package:outfitorbit/views/profile/profile_screen.dart';
+import 'package:outfitorbit/views/shop/categories_view_screen.dart';
 import 'package:outfitorbit/views/shop/shop_screen.dart';
 
 Page getPage({
@@ -26,6 +27,7 @@ Page getPage({
 abstract class AppRoutes {
   static String get onboarding => '/visual';
   static String get takePhoto => '/takePhoto';
+  static String get categoriesView => '/categoriesView';
   static String get searchResult => '/searchResult';
   static String get login => '/login';
   static String get register => '/signup';
@@ -81,6 +83,10 @@ class CustomNavigationHelper {
     GoRoute(
       path: AppRoutes.takePhoto,
       builder: (context, state) => const TakePhotoScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.categoriesView,
+      builder: (context, state) => const CategoriesViewScreen(),
     ),
     GoRoute(
       path: AppRoutes.searchResult,

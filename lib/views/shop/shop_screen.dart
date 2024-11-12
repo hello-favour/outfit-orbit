@@ -59,9 +59,9 @@ class _ShopScreenState extends ConsumerState<ShopScreen> {
               const Expanded(
                 child: TabBarView(
                   children: [
-                    WomenScreen(),
-                    Center(child: Text("Women's Products")),
-                    Center(child: Text("Kids' Products")),
+                    CategoriesCard(),
+                    CategoriesCard(),
+                    CategoriesCard(),
                   ],
                 ),
               ),
