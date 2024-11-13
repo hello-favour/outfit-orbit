@@ -2,11 +2,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:outfitorbit/models/product.dart';
 
-final selectedCategoryProvider = StateProvider<int>((ref) => 0);
+final selectedProvider = StateProvider<int>((ref) => 0);
 
 // Filtered products provider
 final filteredProductsProvider = Provider<List<Product>>((ref) {
-  final selectedIndex = ref.watch(selectedCategoryProvider);
+  final selectedIndex = ref.watch(selectedProvider);
   final selectedCategory = [
     'All',
     'Crop Tops',

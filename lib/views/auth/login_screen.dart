@@ -73,12 +73,10 @@ class LoginScreen extends ConsumerWidget {
                         ],
                       ),
                       7.sH,
-                      GestureDetector(
+                      appButton(
                         onTap: () {},
-                        child: appButton(
-                          context,
-                          title: "LOGIN",
-                        ),
+                        context,
+                        title: "LOGIN",
                       ),
                       Gap(10.h),
                       Center(

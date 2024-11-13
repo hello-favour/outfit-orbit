@@ -66,9 +66,10 @@ class VisualSearchScreen extends ConsumerWidget {
                                   ),
                             ),
                             2.sH,
-                            GestureDetector(
+                            appButton(
                               onTap: () {},
-                              child: appButton(context, title: "Take A PHOTO"),
+                              context,
+                              title: "Take A PHOTO",
                             ),
                             2.sH,
                             GestureDetector(

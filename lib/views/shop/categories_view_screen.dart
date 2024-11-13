@@ -51,14 +51,12 @@ class CategoriesViewScreen extends ConsumerWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 6.w),
-                      child: GestureDetector(
+                      child: appButton(
                         onTap: () {
                           context.push(AppRoutes.womenTop);
                         },
-                        child: appButton(
-                          context,
-                          title: "VIEW ALL ITEMS",
-                        ),
+                        context,
+                        title: "VIEW ALL ITEMS",
                       ),
                     ),
                     2.sH,

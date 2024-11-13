@@ -52,14 +52,12 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               ),
                         ),
                         const SizedBox(height: 8),
-                        GestureDetector(
-                          onTap: () {},
-                          child: SizedBox(
-                            width: 50.w,
-                            child: appButton(
-                              context,
-                              title: "Check",
-                            ),
+                        SizedBox(
+                          width: 50.w,
+                          child: appButton(
+                            onTap: () {},
+                            context,
+                            title: "Check",
                           ),
                         ),
                       ],
@@ -110,7 +108,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.only(right: 5.w),
-                      child: ProductCard(product: products[index]),
+                      child: ProductCard(
+                        product: products[index],
+                      ),
                     );
                   },
                 ),
@@ -149,7 +149,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.only(right: 5.w),
-                      child: ProductCard(product: products[index]),
+                      child: ProductCard(
+                        product: products[index],
+                      ),
                     );
                   },
                 ),

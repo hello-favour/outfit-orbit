@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:outfitorbit/core/constants/app_router.dart';
 import 'package:outfitorbit/providers/women_provider.dart';
 import 'package:outfitorbit/utils/extension.dart';
 import 'package:outfitorbit/views/home/widgets/product_card.dart';
@@ -11,21 +14,12 @@ class WomenTopScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // List of categories
-    final List<String> categories = [
-      'All',
-      'Crop Tops',
-      'Sleeveless',
-      'Blouses',
-      'Skirts',
-      'Dresses',
-      'Jeans'
-    ];
-
-    // Watch selected category index
-    final selectedIndex = ref.watch(selectedCategoryProvider);
-    // Watch filtered products
+    // Watch the selected category index
+    final selectedIndex = ref.watch(selectedProvider);
+    // Watch the filtered products based on the selected category
     final filteredProducts = ref.watch(filteredProductsProvider);
+
+    final List<String> categories = ['All', 'Women', 'Men', 'Boys', 'Girls'];
 
     return Scaffold(
       body: SafeArea(
@@ -57,7 +51,6 @@ class WomenTopScreen extends ConsumerWidget {
               ),
             ),
             2.sH,
-            // Category Tabs
             Expanded(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 6.w),
@@ -70,9 +63,7 @@ class WomenTopScreen extends ConsumerWidget {
                           categories.length,
                           (index) => GestureDetector(
                             onTap: () {
-                              ref
-                                  .read(selectedCategoryProvider.notifier)
-                                  .state = index;
+                              ref.read(selectedProvider.notifier).state = index;
                             },
                             child: Container(
                               margin: EdgeInsets.symmetric(horizontal: 5.sp),
@@ -92,15 +83,41 @@ class WomenTopScreen extends ConsumerWidget {
                                     .bodyLarge!
                                     .copyWith(
                                       color: Colors.white,
-                                      // selectedIndex == index
-                                      //     ? Colors.black
-                                      //     : Colors.white,
                                     ),
                               ),
                             ),
                           ),
                         ),
                       ),
+                    ),
+                    2.sH,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                context.push(AppRoutes.filter);
+                              },
+                              child: const Icon(
+                                Icons.filter_list,
+                              ),
+                            ),
+                            Gap(2.w),
+                            Text(
+                              "Filters",
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                          ],
+                        ),
+                        const Spacer(),
+                        Text(
+                          "Price: lowest to high",
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        const Spacer(),
+                      ],
                     ),
                     2.sH,
                     Expanded(

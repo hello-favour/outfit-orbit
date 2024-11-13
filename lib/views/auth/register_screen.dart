@@ -77,12 +77,10 @@ class RegisterScreen extends ConsumerWidget {
                         ],
                       ),
                       7.sH,
-                      GestureDetector(
+                      appButton(
                         onTap: () {},
-                        child: appButton(
-                          context,
-                          title: "SIGN UP",
-                        ),
+                        context,
+                        title: "SIGN UP",
                       ),
                       Gap(10.h),
                       Center(

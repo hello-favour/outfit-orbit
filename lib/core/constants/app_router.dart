@@ -13,6 +13,7 @@ import 'package:outfitorbit/views/onboarding/visual_search_screen.dart';
 import 'package:outfitorbit/views/profile/profile_screen.dart';
 import 'package:outfitorbit/views/shop/categories_card.dart';
 import 'package:outfitorbit/views/shop/categories_view_screen.dart';
+import 'package:outfitorbit/views/shop/filter_screen.dart';
 import 'package:outfitorbit/views/shop/shop_screen.dart';
 import 'package:outfitorbit/views/shop/women_top_screen.dart';
 
@@ -41,6 +42,7 @@ abstract class AppRoutes {
   static String get categoriesCard => '/categoriesCard';
   static String get searchResult => '/searchResult';
   static String get womenTop => '/womenTop';
+  static String get filter => '/filter';
 }
 
 final GlobalKey<NavigatorState> parentNavigatorKey =
@@ -103,6 +105,10 @@ class CustomNavigationHelper {
     GoRoute(
       path: AppRoutes.womenTop,
       builder: (context, state) => const WomenTopScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.filter,
+      builder: (context, state) => FilterScreen(),
     ),
     GoRoute(
       path: AppRoutes.login,

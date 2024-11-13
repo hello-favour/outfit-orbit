@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:outfitorbit/core/constants/app_colors.dart';
 import 'package:outfitorbit/models/product.dart';
+import 'package:outfitorbit/views/home/widgets/cart_bottom_sheet.dart';
 import 'package:sizer/sizer.dart';
 
 class ProductCard extends StatelessWidget {
@@ -24,15 +25,23 @@ class ProductCard extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  Container(
-                    height: 18.h,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius:
-                          const BorderRadius.vertical(top: Radius.circular(12)),
-                      image: DecorationImage(
-                        image: NetworkImage(product.imageUrl),
-                        fit: BoxFit.cover,
+                  GestureDetector(
+                    onTap: () {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (context) => const CartBottomSheet(),
+                      );
+                    },
+                    child: Container(
+                      height: 18.h,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.vertical(
+                            top: Radius.circular(12)),
+                        image: DecorationImage(
+                          image: NetworkImage(product.imageUrl),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),

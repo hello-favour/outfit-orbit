@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:outfitorbit/core/constants/app_colors.dart';
 import 'package:sizer/sizer.dart';
 
-Widget appButton(
+Widget appButtonOutline(
   BuildContext context, {
   required String title,
   required VoidCallback onTap,
@@ -13,14 +13,16 @@ Widget appButton(
       width: Size.infinite.width,
       height: 6.h,
       decoration: BoxDecoration(
-        color: AppColors.primaryColor,
         borderRadius: BorderRadius.circular(99),
+        border: Border.all(
+          color: AppColors.borderColor,
+        ),
       ),
       alignment: Alignment.center,
       child: Text(
         title,
         style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-              color: AppColors.whiteColor,
+              color: AppColors.blackColor,
             ),
       ),
     ),

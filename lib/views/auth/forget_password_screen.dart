@@ -53,12 +53,10 @@ class ForgetPasswordScreen extends ConsumerWidget {
                         label: "Email",
                       ),
                       7.sH,
-                      GestureDetector(
+                      appButton(
                         onTap: () {},
-                        child: appButton(
-                          context,
-                          title: "SEND",
-                        ),
+                        context,
+                        title: "SEND",
                       ),
                     ],
                   ),
