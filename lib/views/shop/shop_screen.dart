@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:outfitorbit/gen/assets.gen.dart';
 import 'package:outfitorbit/utils/extension.dart';
-import 'package:outfitorbit/views/shop/women_screen.dart';
+import 'package:outfitorbit/views/shop/categories_card.dart';
 import 'package:sizer/sizer.dart';
 
 class ShopScreen extends ConsumerStatefulWidget {

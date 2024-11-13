@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:outfitorbit/core/constants/app_colors.dart';
 import 'package:sizer/sizer.dart';
 
-Container womenBanner(BuildContext context) {
+Container banner(BuildContext context) {
   return Container(
     width: double.infinity,
     padding: EdgeInsets.all(18.sp),

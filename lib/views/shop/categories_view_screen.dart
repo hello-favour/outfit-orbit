@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:outfitorbit/core/constants/app_colors.dart';
+import 'package:outfitorbit/core/constants/app_router.dart';
 import 'package:outfitorbit/gen/assets.gen.dart';
 import 'package:outfitorbit/utils/app_button.dart';
 import 'package:outfitorbit/utils/extension.dart';
 import 'package:sizer/sizer.dart';
 
-class CategoriesViewScreen extends ConsumerStatefulWidget {
+class CategoriesViewScreen extends ConsumerWidget {
   const CategoriesViewScreen({super.key});
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() =>
-      _CategoriesViewScreenState();
-}
-
-class _CategoriesViewScreenState extends ConsumerState<CategoriesViewScreen> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -29,7 +25,9 @@ class _CategoriesViewScreenState extends ConsumerState<CategoriesViewScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.pop();
+                    },
                     child: SvgPicture.asset(Assets.icons.left),
                   ),
                   const Spacer(),
@@ -54,7 +52,9 @@ class _CategoriesViewScreenState extends ConsumerState<CategoriesViewScreen> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 6.w),
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          context.push(AppRoutes.womenTop);
+                        },
                         child: appButton(
                           context,
                           title: "VIEW ALL ITEMS",

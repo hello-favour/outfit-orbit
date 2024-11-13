@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:outfitorbit/core/constants/app_router.dart';
 import 'package:outfitorbit/utils/extension.dart';
-import 'package:outfitorbit/views/shop/widgets/women_banner.dart';
-import 'package:outfitorbit/views/shop/widgets/women_product_card.dart';
+import 'package:outfitorbit/views/shop/widgets/banner.dart';
+import 'package:outfitorbit/views/shop/widgets/product_card.dart';
 import 'package:sizer/sizer.dart';
 
 class CategoriesCard extends ConsumerWidget {
@@ -19,7 +19,7 @@ class CategoriesCard extends ConsumerWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                womenBanner(context),
+                banner(context),
                 2.sH,
                 ProductCard(
                   title: "NEW",

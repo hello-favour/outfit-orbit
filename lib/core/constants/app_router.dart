@@ -11,8 +11,10 @@ import 'package:outfitorbit/views/onboarding/search_result_screen.dart';
 import 'package:outfitorbit/views/onboarding/take_photo_screen.dart';
 import 'package:outfitorbit/views/onboarding/visual_search_screen.dart';
 import 'package:outfitorbit/views/profile/profile_screen.dart';
+import 'package:outfitorbit/views/shop/categories_card.dart';
 import 'package:outfitorbit/views/shop/categories_view_screen.dart';
 import 'package:outfitorbit/views/shop/shop_screen.dart';
+import 'package:outfitorbit/views/shop/women_top_screen.dart';
 
 Page getPage({
   required Widget child,
@@ -25,10 +27,6 @@ Page getPage({
 }
 
 abstract class AppRoutes {
-  static String get onboarding => '/visual';
-  static String get takePhoto => '/takePhoto';
-  static String get categoriesView => '/categoriesView';
-  static String get searchResult => '/searchResult';
   static String get login => '/login';
   static String get register => '/signup';
   static String get forgotPassword => '/forgotPassword';
@@ -37,6 +35,12 @@ abstract class AppRoutes {
   static String get favorite => '/favorite';
   static String get profile => '/profile';
   static String get shop => '/shop';
+  static String get onboarding => '/visual';
+  static String get takePhoto => '/takePhoto';
+  static String get categoriesView => '/categoriesView';
+  static String get categoriesCard => '/categoriesCard';
+  static String get searchResult => '/searchResult';
+  static String get womenTop => '/womenTop';
 }
 
 final GlobalKey<NavigatorState> parentNavigatorKey =
@@ -89,8 +93,16 @@ class CustomNavigationHelper {
       builder: (context, state) => const CategoriesViewScreen(),
     ),
     GoRoute(
+      path: AppRoutes.categoriesCard,
+      builder: (context, state) => const CategoriesCard(),
+    ),
+    GoRoute(
       path: AppRoutes.searchResult,
       builder: (context, state) => const SearchResultScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.womenTop,
+      builder: (context, state) => const WomenTopScreen(),
     ),
     GoRoute(
       path: AppRoutes.login,
@@ -129,6 +141,17 @@ class CustomNavigationHelper {
                   state: state,
                 );
               },
+              routes: [
+                GoRoute(
+                  path: AppRoutes.categoriesView,
+                  pageBuilder: (context, state) {
+                    return getPage(
+                      child: const CategoriesViewScreen(),
+                      state: state,
+                    );
+                  },
+                ),
+              ],
             ),
           ],
         ),
