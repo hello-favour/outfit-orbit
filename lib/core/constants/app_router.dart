@@ -78,7 +78,7 @@ class CustomNavigationHelper {
     // Router initialization happens here.
     router = GoRouter(
       navigatorKey: parentNavigatorKey,
-      initialLocation: AppRoutes.shortDress,
+      initialLocation: AppRoutes.searchResult,
       routes: routes,
     );
   }

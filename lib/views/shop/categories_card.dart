@@ -21,7 +21,7 @@ class CategoriesCard extends ConsumerWidget {
               children: [
                 banner(context),
                 2.sH,
-                ProductCard(
+                ProductCards(
                   title: "NEW",
                   imgUrl:
                       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS3_-mS0I_N58RA_7xezmysJK942oglJmv0AyXXWNNItUFsLwIHt3ZOFpfmM31oHxKfDM&usqp=CAU",
@@ -30,21 +30,21 @@ class CategoriesCard extends ConsumerWidget {
                   },
                 ),
                 2.sH,
-                ProductCard(
+                ProductCards(
                   title: "Clothes",
                   imgUrl:
                       "https://assets.thenorthface.com/images/t_img/c_pad,b_white,f_auto,h_650,w_555,e_sharpen:70/NF0A88ZW1OM-HERO/Womens-Evolution-Hoodie-in-Algae-Blue.png",
                   onTap: () {},
                 ),
                 2.sH,
-                ProductCard(
+                ProductCards(
                   title: "Shoes",
                   imgUrl:
                       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS3_-mS0I_N58RA_7xezmysJK942oglJmv0AyXXWNNItUFsLwIHt3ZOFpfmM31oHxKfDM&usqp=CAU",
                   onTap: () {},
                 ),
                 2.sH,
-                ProductCard(
+                ProductCards(
                   title: "Accessories",
                   imgUrl:
                       "https://assets.thenorthface.com/images/t_img/c_pad,b_white,f_auto,h_650,w_555,e_sharpen:70/NF0A88ZW1OM-HERO/Womens-Evolution-Hoodie-in-Algae-Blue.png",
