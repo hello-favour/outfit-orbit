@@ -5,11 +5,11 @@ import 'package:outfitorbit/utils/extension.dart';
 import 'package:outfitorbit/views/favorites/widgets/favorite_text.dart';
 import 'package:sizer/sizer.dart';
 
-class FavoritesCard extends StatelessWidget {
+class BagCard extends StatelessWidget {
   final String title;
   final String imgUrl;
   final VoidCallback onTap;
-  const FavoritesCard({
+  const BagCard({
     super.key,
     required this.title,
     required this.imgUrl,

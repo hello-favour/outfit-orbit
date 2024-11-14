@@ -5,6 +5,7 @@ import 'package:outfitorbit/views/auth/forget_password_screen.dart';
 import 'package:outfitorbit/views/auth/login_screen.dart';
 import 'package:outfitorbit/views/auth/register_screen.dart';
 import 'package:outfitorbit/views/bag/bag_screen.dart';
+import 'package:outfitorbit/views/bag/checkout_screen.dart';
 import 'package:outfitorbit/views/favorites/favorites_screen.dart';
 import 'package:outfitorbit/views/home/home_screen.dart';
 import 'package:outfitorbit/views/home/short_dress_screen.dart';
@@ -47,6 +48,7 @@ abstract class AppRoutes {
   static String get shortDress => '/shortDress';
   static String get filter => '/filter';
   static String get cartSheet => '/cartSheet';
+  static String get checkOutScreen => '/checkOutScreen';
 }
 
 final GlobalKey<NavigatorState> parentNavigatorKey =
@@ -117,6 +119,10 @@ class CustomNavigationHelper {
     GoRoute(
       path: AppRoutes.cartSheet,
       builder: (context, state) => CartBottomSheet(),
+    ),
+    GoRoute(
+      path: AppRoutes.checkOutScreen,
+      builder: (context, state) => const CheckoutScreen(),
     ),
     GoRoute(
       path: AppRoutes.filter,
