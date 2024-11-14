@@ -166,18 +166,22 @@ class FilterScreen extends ConsumerWidget {
                                   .selectCategory(category);
                             },
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8.sp),
+                              borderRadius: BorderRadius.circular(10.sp),
                               child: Container(
                                 width: 22.w,
                                 decoration: BoxDecoration(
                                   color: isSelected
                                       ? AppColors.primaryColor
                                       : AppColors.whiteColor,
+                                  border: Border.all(
+                                    color:
+                                        AppColors.borderColor.withOpacity(0.5),
+                                  ),
                                   boxShadow: [
                                     BoxShadow(
                                       color: AppColors.greyColor,
-                                      spreadRadius: 8,
-                                      blurRadius: 20,
+                                      spreadRadius: 50,
+                                      blurRadius: 50,
                                       offset: const Offset(0, 10),
                                     ),
                                   ],

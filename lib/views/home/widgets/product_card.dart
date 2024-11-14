@@ -29,7 +29,7 @@ class ProductCard extends StatelessWidget {
                     onTap: () {
                       showModalBottomSheet(
                         context: context,
-                        builder: (context) => const CartBottomSheet(),
+                        builder: (context) => CartBottomSheet(),
                       );
                     },
                     child: Container(
