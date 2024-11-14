@@ -7,6 +7,8 @@ import 'package:outfitorbit/views/auth/register_screen.dart';
 import 'package:outfitorbit/views/bag/bag_screen.dart';
 import 'package:outfitorbit/views/favorites/favorites_screen.dart';
 import 'package:outfitorbit/views/home/home_screen.dart';
+import 'package:outfitorbit/views/home/short_dress_screen.dart';
+import 'package:outfitorbit/views/home/widgets/cart_bottom_sheet.dart';
 import 'package:outfitorbit/views/onboarding/search_result_screen.dart';
 import 'package:outfitorbit/views/onboarding/take_photo_screen.dart';
 import 'package:outfitorbit/views/onboarding/visual_search_screen.dart';
@@ -42,7 +44,9 @@ abstract class AppRoutes {
   static String get categoriesCard => '/categoriesCard';
   static String get searchResult => '/searchResult';
   static String get womenTop => '/womenTop';
+  static String get shortDress => '/shortDress';
   static String get filter => '/filter';
+  static String get cartSheet => '/cartSheet';
 }
 
 final GlobalKey<NavigatorState> parentNavigatorKey =
@@ -74,7 +78,7 @@ class CustomNavigationHelper {
     // Router initialization happens here.
     router = GoRouter(
       navigatorKey: parentNavigatorKey,
-      initialLocation: AppRoutes.searchResult,
+      initialLocation: AppRoutes.shortDress,
       routes: routes,
     );
   }
@@ -105,6 +109,14 @@ class CustomNavigationHelper {
     GoRoute(
       path: AppRoutes.womenTop,
       builder: (context, state) => const WomenTopScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.shortDress,
+      builder: (context, state) => const ShortDressScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.cartSheet,
+      builder: (context, state) => CartBottomSheet(),
     ),
     GoRoute(
       path: AppRoutes.filter,

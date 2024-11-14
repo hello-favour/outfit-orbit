@@ -113,7 +113,9 @@ class CartBottomSheet extends ConsumerWidget {
               appButton(
                 context,
                 title: "ADD TO CART",
-                onTap: () {},
+                onTap: () {
+                  context.push(AppRoutes.shortDress);
+                },
               ),
               2.sH,
             ],
