@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:outfitorbit/core/constants/app_colors.dart';
 import 'package:outfitorbit/gen/assets.gen.dart';
 import 'package:outfitorbit/utils/extension.dart';
+import 'package:outfitorbit/views/bag/widgets/shipping_address.dart';
 import 'package:sizer/sizer.dart';
 
 class CheckoutScreen extends ConsumerWidget {
@@ -34,6 +36,40 @@ class CheckoutScreen extends ConsumerWidget {
                   ),
                   const Spacer(),
                 ],
+              ),
+            ),
+            2.sH,
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 6.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Shipping address",
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    2.sH,
+                    const ShippingAddress(),
+                    5.sH,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Payment",
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                        Text(
+                          "Change",
+                          style:
+                              Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                    color: AppColors.primaryColor,
+                                  ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
