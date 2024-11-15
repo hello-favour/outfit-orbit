@@ -54,7 +54,9 @@ class CheckoutScreen extends ConsumerWidget {
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                     2.sH,
-                    const ShippingAddress(),
+                    const ShippingAddress(
+                      edit: false,
+                    ),
                     5.sH,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
