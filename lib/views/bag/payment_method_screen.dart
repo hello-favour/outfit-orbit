@@ -3,18 +3,18 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:outfitorbit/core/constants/app_colors.dart';
-import 'package:outfitorbit/core/constants/app_router.dart';
 import 'package:outfitorbit/gen/assets.gen.dart';
 import 'package:outfitorbit/utils/extension.dart';
-import 'package:outfitorbit/views/bag/widgets/shipping_address.dart';
+import 'package:outfitorbit/views/bag/widgets/add_new_card.dart';
 import 'package:sizer/sizer.dart';
 
-class ShippingAddressScreen extends ConsumerWidget {
-  const ShippingAddressScreen({super.key});
+class PaymentMethodScreen extends ConsumerWidget {
+  const PaymentMethodScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
+      backgroundColor: AppColors.whiteColor,
       body: SafeArea(
         child: Column(
           children: [
@@ -32,7 +32,7 @@ class ShippingAddressScreen extends ConsumerWidget {
                   ),
                   const Spacer(),
                   Text(
-                    "Shipping Addresses",
+                    "Payment Methods",
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                   const Spacer(),
@@ -43,14 +43,21 @@ class ShippingAddressScreen extends ConsumerWidget {
             Expanded(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 6.w),
-                child: ListView.builder(
-                  itemCount: 6,
-                  itemBuilder: (context, index) => Padding(
-                    padding: EdgeInsets.only(bottom: 3.h),
-                    child: const AddressCard(
-                      edit: true,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    2.sH,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Your payments cards",
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                      ],
                     ),
-                  ),
+                    2.sH,
+                  ],
                 ),
               ),
             ),
@@ -60,7 +67,14 @@ class ShippingAddressScreen extends ConsumerWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: AppColors.blackColor,
         onPressed: () {
-          context.push(AppRoutes.editShippingAddress);
+          showModalBottomSheet(
+            context: context,
+            isScrollControlled: true,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+            ),
+            builder: (context) => const AddNewCard(),
+          );
         },
         child: Icon(
           Icons.add,

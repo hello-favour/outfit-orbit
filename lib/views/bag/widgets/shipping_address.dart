@@ -5,13 +5,12 @@ import 'package:outfitorbit/core/constants/app_router.dart';
 import 'package:outfitorbit/utils/extension.dart';
 import 'package:sizer/sizer.dart';
 
-class ShippingAddress extends StatelessWidget {
+class AddressCard extends StatelessWidget {
   final bool edit;
-  // final String editText;
-  const ShippingAddress({
+
+  const AddressCard({
     super.key,
     required this.edit,
-    // required this.editText,
   });
 
   @override
@@ -46,9 +45,14 @@ class ShippingAddress extends StatelessWidget {
                 ],
               ),
               edit == true
-                  ? Text(
-                      "Edit",
-                      style: Theme.of(context).textTheme.bodyLarge,
+                  ? GestureDetector(
+                      onTap: () {
+                        context.push(AppRoutes.editShippingAddress);
+                      },
+                      child: Text(
+                        "Edit",
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      ),
                     )
                   : GestureDetector(
                       onTap: () {

@@ -95,6 +95,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/Image2.png
   AssetGenImage get image2 => const AssetGenImage('assets/images/Image2.png');
 
+  /// File path: assets/images/background.png
+  AssetGenImage get background =>
+      const AssetGenImage('assets/images/background.png');
+
   /// File path: assets/images/cloth.png
   AssetGenImage get cloth => const AssetGenImage('assets/images/cloth.png');
 
@@ -114,12 +118,25 @@ class $AssetsImagesGen {
   AssetGenImage get mastercard =>
       const AssetGenImage('assets/images/mastercard.png');
 
+  /// File path: assets/images/success.png
+  AssetGenImage get success => const AssetGenImage('assets/images/success.png');
+
   /// File path: assets/images/usps.png
   AssetGenImage get usps => const AssetGenImage('assets/images/usps.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [image2, cloth, dhl, fedEx, image, image1, mastercard, usps];
+  List<AssetGenImage> get values => [
+        image2,
+        background,
+        cloth,
+        dhl,
+        fedEx,
+        image,
+        image1,
+        mastercard,
+        success,
+        usps
+      ];
 }
 
 class Assets {
