@@ -42,6 +42,7 @@ dependencies:
   flutter_gen: ^5.8.0
   go_router: ^14.4.1
   draggable_scrollbar: ^0.1.0
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   flutter_test:

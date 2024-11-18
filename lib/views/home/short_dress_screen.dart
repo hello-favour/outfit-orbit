@@ -146,12 +146,12 @@ class ShortDressScreen extends ConsumerWidget {
                             height: 30.h,
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
-                              itemCount: products.length,
+                              itemCount: newProducts.length,
                               itemBuilder: (context, index) {
                                 return Padding(
                                   padding: EdgeInsets.only(right: 5.w),
                                   child: ProductCard(
-                                    product: products[index],
+                                    product: newProducts[index],
                                   ),
                                 );
                               },

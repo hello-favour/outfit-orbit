@@ -12,7 +12,10 @@ import 'package:outfitorbit/views/bag/payment_method_screen.dart';
 import 'package:outfitorbit/views/bag/shipping_address_screen.dart';
 import 'package:outfitorbit/views/bag/success_screen.dart';
 import 'package:outfitorbit/views/favorites/favorites_screen.dart';
+import 'package:outfitorbit/views/home/arrived_product_screen.dart';
 import 'package:outfitorbit/views/home/home_screen.dart';
+import 'package:outfitorbit/views/home/new_product_screen.dart';
+import 'package:outfitorbit/views/home/sales_product_screen.dart';
 import 'package:outfitorbit/views/home/short_dress_screen.dart';
 import 'package:outfitorbit/views/home/widgets/cart_bottom_sheet.dart';
 import 'package:outfitorbit/views/onboarding/search_result_screen.dart';
@@ -61,6 +64,9 @@ abstract class AppRoutes {
   static String get successScreen => '/successScreen';
   static String get paymentScreen => '/paymentScreen';
   static String get setting => '/setting';
+  static String get salesProduct => '/salesView';
+  static String get newProduct => '/newProduct';
+  static String get arrivedProduct => '/arrivedProduct';
 }
 
 final GlobalKey<NavigatorState> parentNavigatorKey =
@@ -155,6 +161,18 @@ class CustomNavigationHelper {
     GoRoute(
       path: AppRoutes.continueShopping,
       builder: (context, state) => const ContinueShoppingScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.salesProduct,
+      builder: (context, state) => const SalesProductScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.newProduct,
+      builder: (context, state) => const NewProductScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.arrivedProduct,
+      builder: (context, state) => const ArrivedProductScreen(),
     ),
     GoRoute(
       path: AppRoutes.setting,

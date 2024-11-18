@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
+import 'package:outfitorbit/core/constants/app_colors.dart';
 import 'package:outfitorbit/core/constants/app_router.dart';
 import 'package:outfitorbit/providers/women_provider.dart';
 import 'package:outfitorbit/utils/extension.dart';
@@ -69,8 +70,8 @@ class _FavoritesScreenState extends ConsumerState<FavoritesScreen> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(99.sp),
                                 color: selectedIndex == index
-                                    ? Colors.red
-                                    : Colors.black,
+                                    ? AppColors.primaryColor
+                                    : AppColors.blackColor,
                               ),
                               alignment: Alignment.center,
                               child: Text(

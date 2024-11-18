@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:outfitorbit/core/constants/app_colors.dart';
+import 'package:outfitorbit/core/constants/app_router.dart';
 import 'package:outfitorbit/gen/assets.gen.dart';
 import 'package:outfitorbit/models/product.dart';
 import 'package:outfitorbit/utils/app_button.dart';
@@ -91,7 +92,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     ],
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.push(AppRoutes.salesProduct);
+                    },
                     child: Text(
                       "View all",
                       style: Theme.of(context).textTheme.bodyLarge,
@@ -99,23 +102,23 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   ),
                 ],
               ),
-              Gap(3.h),
+              2.sH,
               SizedBox(
-                height: 30.h,
+                height: MediaQuery.of(context).size.height * 0.32,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: products.length,
+                  itemCount: salesProducts.length,
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.only(right: 5.w),
                       child: ProductCard(
-                        product: products[index],
+                        product: salesProducts[index],
                       ),
                     );
                   },
                 ),
               ),
-              Gap(3.h),
+              3.sH,
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -133,7 +136,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     ],
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.push(AppRoutes.newProduct);
+                    },
                     child: Text(
                       "View all",
                       style: Theme.of(context).textTheme.bodyLarge,
@@ -141,16 +146,61 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   ),
                 ],
               ),
+              2.sH,
               SizedBox(
-                height: 30.h,
+                height: MediaQuery.of(context).size.height * 0.32,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: products.length,
+                  itemCount: newProducts.length,
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.only(right: 5.w),
                       child: ProductCard(
-                        product: products[index],
+                        product: newProducts[index],
+                      ),
+                    );
+                  },
+                ),
+              ),
+              3.sH,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Arrived",
+                        style: Theme.of(context).textTheme.headlineLarge,
+                      ),
+                      Text(
+                        "You've never seen it before!",
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                    ],
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      context.push(AppRoutes.arrivedProduct);
+                    },
+                    child: Text(
+                      "View all",
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                  ),
+                ],
+              ),
+              2.sH,
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.32,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: arrivedProducts.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.only(right: 5.w),
+                      child: ProductCard(
+                        product: arrivedProducts[index],
                       ),
                     );
                   },

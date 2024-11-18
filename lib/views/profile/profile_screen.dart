@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:outfitorbit/core/constants/app_colors.dart';
+import 'package:outfitorbit/core/constants/app_router.dart';
 import 'package:outfitorbit/gen/assets.gen.dart';
 import 'package:outfitorbit/utils/extension.dart';
 import 'package:outfitorbit/views/profile/widgets/profile_row.dart';
@@ -98,7 +100,9 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                     ProfileRow(
                       title: 'Settings',
                       subTitle: "Notification, password",
-                      onTap: () {},
+                      onTap: () {
+                        context.push(AppRoutes.setting);
+                      },
                     ),
                   ],
                 ),
