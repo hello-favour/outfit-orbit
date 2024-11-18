@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:outfitorbit/core/constants/app_colors.dart';
+import 'package:outfitorbit/core/constants/app_router.dart';
 import 'package:outfitorbit/gen/assets.gen.dart';
 import 'package:outfitorbit/utils/app_button.dart';
 import 'package:outfitorbit/utils/extension.dart';
@@ -54,7 +55,9 @@ class CheckoutScreen extends ConsumerWidget {
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                     2.sH,
-                    const ShippingAddress(),
+                    const AddressCard(
+                      edit: false,
+                    ),
                     5.sH,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -63,12 +66,17 @@ class CheckoutScreen extends ConsumerWidget {
                           "Payment",
                           style: Theme.of(context).textTheme.titleMedium,
                         ),
-                        Text(
-                          "Change",
-                          style:
-                              Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    color: AppColors.primaryColor,
-                                  ),
+                        GestureDetector(
+                          onTap: () {
+                            context.push(AppRoutes.paymentScreen);
+                          },
+                          child: Text(
+                            "Change",
+                            style:
+                                Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                      color: AppColors.primaryColor,
+                                    ),
+                          ),
                         ),
                       ],
                     ),
@@ -78,7 +86,7 @@ class CheckoutScreen extends ConsumerWidget {
                         Expanded(
                           flex: 1,
                           child: DelivereyMethod(
-                            logo: Assets.images.dhl.path,
+                            logo: Assets.images.mastercard.path,
                             daysText: "2-3 days",
                           ),
                         ),
@@ -97,15 +105,8 @@ class CheckoutScreen extends ConsumerWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Delivery",
+                          "Delivery method",
                           style: Theme.of(context).textTheme.titleMedium,
-                        ),
-                        Text(
-                          "Method",
-                          style:
-                              Theme.of(context).textTheme.bodyLarge!.copyWith(
-                                    color: AppColors.primaryColor,
-                                  ),
                         ),
                       ],
                     ),
@@ -159,7 +160,9 @@ class CheckoutScreen extends ConsumerWidget {
               child: appButton(
                 context,
                 title: "SUBMIT ORDER",
-                onTap: () {},
+                onTap: () {
+                  context.push(AppRoutes.continueShopping);
+                },
               ),
             ),
             Gap(5.h),

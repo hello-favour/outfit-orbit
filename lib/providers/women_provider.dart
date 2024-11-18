@@ -19,9 +19,9 @@ final filteredProductsProvider = Provider<List<Product>>((ref) {
 
   // Return all products if "All" is selected; otherwise, filter by category
   if (selectedCategory == 'All') {
-    return products;
+    return newProducts;
   } else {
-    return products
+    return newProducts
         .where((product) => product.category == selectedCategory)
         .toList();
   }

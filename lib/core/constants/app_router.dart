@@ -6,14 +6,23 @@ import 'package:outfitorbit/views/auth/login_screen.dart';
 import 'package:outfitorbit/views/auth/register_screen.dart';
 import 'package:outfitorbit/views/bag/bag_screen.dart';
 import 'package:outfitorbit/views/bag/checkout_screen.dart';
+import 'package:outfitorbit/views/bag/continue_shopping_screen.dart';
+import 'package:outfitorbit/views/bag/edit_shipping_address_screen.dart';
+import 'package:outfitorbit/views/bag/payment_method_screen.dart';
+import 'package:outfitorbit/views/bag/shipping_address_screen.dart';
+import 'package:outfitorbit/views/bag/success_screen.dart';
 import 'package:outfitorbit/views/favorites/favorites_screen.dart';
+import 'package:outfitorbit/views/home/arrived_product_screen.dart';
 import 'package:outfitorbit/views/home/home_screen.dart';
+import 'package:outfitorbit/views/home/new_product_screen.dart';
+import 'package:outfitorbit/views/home/sales_product_screen.dart';
 import 'package:outfitorbit/views/home/short_dress_screen.dart';
 import 'package:outfitorbit/views/home/widgets/cart_bottom_sheet.dart';
 import 'package:outfitorbit/views/onboarding/search_result_screen.dart';
 import 'package:outfitorbit/views/onboarding/take_photo_screen.dart';
 import 'package:outfitorbit/views/onboarding/visual_search_screen.dart';
 import 'package:outfitorbit/views/profile/profile_screen.dart';
+import 'package:outfitorbit/views/profile/setting_screen.dart';
 import 'package:outfitorbit/views/shop/categories_card.dart';
 import 'package:outfitorbit/views/shop/categories_view_screen.dart';
 import 'package:outfitorbit/views/shop/filter_screen.dart';
@@ -49,6 +58,15 @@ abstract class AppRoutes {
   static String get filter => '/filter';
   static String get cartSheet => '/cartSheet';
   static String get checkOutScreen => '/checkOutScreen';
+  static String get shippingAddress => '/shippingAddress';
+  static String get editShippingAddress => '/editShippingAddress';
+  static String get continueShopping => '/continueShopping';
+  static String get successScreen => '/successScreen';
+  static String get paymentScreen => '/paymentScreen';
+  static String get setting => '/setting';
+  static String get salesProduct => '/salesView';
+  static String get newProduct => '/newProduct';
+  static String get arrivedProduct => '/arrivedProduct';
 }
 
 final GlobalKey<NavigatorState> parentNavigatorKey =
@@ -123,6 +141,42 @@ class CustomNavigationHelper {
     GoRoute(
       path: AppRoutes.checkOutScreen,
       builder: (context, state) => const CheckoutScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.shippingAddress,
+      builder: (context, state) => const ShippingAddressScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.editShippingAddress,
+      builder: (context, state) => const EditShippingAddressScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.paymentScreen,
+      builder: (context, state) => const PaymentMethodScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.successScreen,
+      builder: (context, state) => const SuccessScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.continueShopping,
+      builder: (context, state) => const ContinueShoppingScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.salesProduct,
+      builder: (context, state) => const SalesProductScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.newProduct,
+      builder: (context, state) => const NewProductScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.arrivedProduct,
+      builder: (context, state) => const ArrivedProductScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.setting,
+      builder: (context, state) => const SettingScreen(),
     ),
     GoRoute(
       path: AppRoutes.filter,

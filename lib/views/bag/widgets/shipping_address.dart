@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:outfitorbit/core/constants/app_colors.dart';
+import 'package:outfitorbit/core/constants/app_router.dart';
 import 'package:outfitorbit/utils/extension.dart';
 import 'package:sizer/sizer.dart';
 
-class ShippingAddress extends StatelessWidget {
-  const ShippingAddress({
+class AddressCard extends StatelessWidget {
+  final bool edit;
+
+  const AddressCard({
     super.key,
+    required this.edit,
   });
 
   @override
@@ -31,16 +36,35 @@ class ShippingAddress extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "Jane Doe",
-                style: Theme.of(context).textTheme.bodyLarge,
+              Row(
+                children: [
+                  Text(
+                    "Jane Doe",
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                ],
               ),
-              Text(
-                "Change",
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      color: AppColors.primaryColor,
-                    ),
-              ),
+              edit == true
+                  ? GestureDetector(
+                      onTap: () {
+                        context.push(AppRoutes.editShippingAddress);
+                      },
+                      child: Text(
+                        "Edit",
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      ),
+                    )
+                  : GestureDetector(
+                      onTap: () {
+                        context.push(AppRoutes.shippingAddress);
+                      },
+                      child: Text(
+                        "Change",
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                              color: AppColors.primaryColor,
+                            ),
+                      ),
+                    )
             ],
           ),
           1.sH,
